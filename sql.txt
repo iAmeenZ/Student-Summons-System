@@ -1,0 +1,49 @@
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `studentid` varchar(100) NOT NULL,
+  `studentic` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `student` (
+  `studentid` varchar(20) NOT NULL PRIMARY KEY,
+  `studentic` varchar(20) NOT NULL,
+  `studentName` varchar(20) NOT NULL,
+  `studentProgramme` varchar(20) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE offense (
+  `offenseid` varchar(20) NOT NULL PRIMARY KEY,
+  `typeOfOffense` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE summon (
+  `serialnum` varchar(20) NOT NULL,
+  `dateissue` varchar(20) NOT NULL,
+  `location` varchar(20) NOT NULL,
+  `offenseid` varchar(20) NOT NULL,
+  `studentid` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO student (studentid, studentic,studentName,studentProgram) VALUES ('2018258096', '000209101495','Nur  Ameerul Ameen','CS110');
+
+INSERT INTO admin (username, password) VALUES ('pbamir', '12345');
+
+INSERT INTO offense (`offenseid`, `typeOfOffense`) VALUES
+('AA01', 'HAIR'),
+('AA02', 'MATRIC CARD'),
+('AA03', 'ATTIRE'),
+('AA04', 'PANTS'),
+('AA05', 'SOCKS'),
+('AA06', 'FOOTWEAR'),
+('BB01', 'ACCESORIES'),
+('BB02', 'BREAKING CURFEW'),
+('BB03', 'CIGARETTES ETC..'),
+('BB04', 'BULLY'),
+('BB05', 'BREAKING COLLEGE RUL'),
+('BB06', 'VANDELISME');
